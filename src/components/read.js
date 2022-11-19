@@ -1,14 +1,15 @@
 import React from "react";
 import { Books } from "./books";
-import axios from "axios";
+import axios from "axios"; //import to use axios
 
+//read.js
 export class Read extends React.Component{
     
 
     componentDidMount() {
-        axios.get('http://localhost:4000/api/books')
+        axios.get('http://localhost:4000/api/books') 
         .then((response)=>{
-            this.setState({books:response.data.myBooks})
+            this.setState({books:response.data})
         })
         .catch((error)=>{
             console.log(error);

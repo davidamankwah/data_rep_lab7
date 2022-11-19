@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 
+//create.js
 export class Create extends React.Component {
 
     constructor(){
@@ -9,14 +10,12 @@ export class Create extends React.Component {
         this.onChangeBookTitle = this.onChangeBookTitle.bind(this);
         this.onChangeBookCover = this.onChangeBookCover.bind(this);
         this.onChangeBookAuthor = this.onChangeBookAuthor.bind(this);
-        
         this.state = {
             title:'',
             cover:'',
             author:''
         }
     }
-
     handleSubmit(e){
         e.preventDefault();
         console.log(`Button clicked 
@@ -29,7 +28,7 @@ export class Create extends React.Component {
             cover:this.state.cover,
             author:this.state.author
         }
-
+        
         axios.post('http://localhost:4000/api/books',book)
         .then()
         .catch();
